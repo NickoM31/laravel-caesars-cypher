@@ -14,5 +14,4 @@
 
 Route::get('/', 'ChiffrementsController@getShowMess');
 Route::get('/form', 'ChiffrementsController@getViewForm');
-Route::get('/form', 'ChiffrementsController@getAlphaBet');
 Route::post('/', 'ChiffrementsController@postMess');

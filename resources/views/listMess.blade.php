@@ -9,9 +9,6 @@
 	@foreach ($mess as $message )
 	<li>{{$message->text}}</li>
 	@endforeach
-
-	
-
 	<a href="/form">Poster un message</a>
 </body>
 </html>
