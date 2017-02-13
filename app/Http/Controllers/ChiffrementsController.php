@@ -15,10 +15,16 @@ class ChiffrementsController extends Controller
 	public function getViewForm(){
 		return view('formEncrypt');
 	}
-	public function postMess(Request $request){
-		Encrypt::create($request->all());
-		return redirect()->action('ChiffrementsController@getShowMess');
-	}
-	
+    public function postMess(Request $request){
+    	Encrypt::create($request->all());
+    	return redirect()->action('ChiffrementsController@getShowMess');
+    }
+    public function getAlphaBet(){
+    	$alphabet = range("a","z");
+        $alphaString = implode('', $alphabet);
+        $find = "c";
+        $pos = strpos($alphaString, $find);
+        return $pos;
+    }
 
 }

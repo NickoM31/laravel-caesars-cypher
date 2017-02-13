@@ -9,6 +9,10 @@
 	@foreach ($mess as $message )
 	<li>{{$message->text}}</li>
 	@endforeach
+
+	@foreach ($alphabet as $letter)
+		<div>{{$letter}}</div>
+	@enfforeach
 	<a href="/form">Poster un message</a>
 </body>
 </html>

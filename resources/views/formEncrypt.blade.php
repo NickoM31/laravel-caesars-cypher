@@ -10,7 +10,9 @@
 	{{csrf_field()}}
 	<label for="text">Entrer votre texte </label>
 		<input type="text" name="text" id="text">
+		<label for="clee">Entrer la clée de décriptage</label>
+		<input type="text" name="clee" id="clee">
 		<button type="submit">Valider</button>
 	</form>
-	
+
 </html>
