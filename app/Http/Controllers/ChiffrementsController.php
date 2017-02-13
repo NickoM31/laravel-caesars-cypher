@@ -16,15 +16,28 @@ class ChiffrementsController extends Controller
 		return view('formEncrypt');
 	}
     public function postMess(Request $request){
-    	Encrypt::create($request->all());
-    	return redirect()->action('ChiffrementsController@getShowMess');
+    	$decal = $request->clef;
+        $arr = str_split($request->message,1);
+        $alphabet = range('a','z');
+        $messCrypt = "";
+        foreach ($arr as $value) {
+            $val = $value;
+            $comparArr = array_search($val,$alphabet)+$decal;
+            $val = $alphabet[$comparArr];
+            $messCrypt .= $val;
+        }
+
+        $message = new Encrypt();
+        $message->text = $messCrypt;
+        $message->save();
+        return redirect()->action('ChiffrementsController@getShowMess');
     }
-    public function getAlphaBet(){
-    	$alphabet = range("a","z");
-        $alphaString = implode('', $alphabet);
-        $find = "c";
-        $pos = strpos($alphaString, $find);
-        return $pos;
-    }
+    // public function getAlphaBet(){
+    // 	$alphabet = range("a","z");
+    //     $alphaString = implode('', $alphabet);
+    //     $find = "f";
+    //     $pos = strpos($alphaString, $find);
+    //     return $pos;
+    // }
 
 }

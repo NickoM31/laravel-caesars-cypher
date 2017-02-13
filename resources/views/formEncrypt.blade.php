@@ -8,10 +8,10 @@
 <body>
 	<form action="/" method="post">
 	{{csrf_field()}}
-	<label for="text">Entrer votre texte </label>
-		<input type="text" name="text" id="text">
-		<label for="clee">Entrer la clée de décriptage</label>
-		<input type="text" name="clee" id="clee">
+	<label for="message">Entrer votre texte </label>
+		<input type="text" name="message" id="message">
+		<label for="clef">Entrer la clée de décriptage</label>
+		<input type="number" name="clef" id="clef">
 		<button type="submit">Valider</button>
 	</form>
 
